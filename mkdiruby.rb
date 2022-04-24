@@ -18,7 +18,7 @@ end
 ########### GEMFILE
 def create_gemfile(folder_name)
   gemfile = File.open("./#{folder_name}/Gemfile", "w")
-  gems = ["source \"https://rubygems.org\"", "ruby '2.7.4'", "gem 'rubocop'", "gem 'rspec'", "gem 'pry'", "gem 'dotenv'", "gem 'nokogiri'"]
+  gems = ["source \"https://rubygems.org\"", "ruby '2.7.4', '~> 0.57.2'", "gem 'rubocop'", "gem 'rspec'", "gem 'pry'", "gem 'dotenv'"]
   gemfile = File.open("./#{folder_name}/Gemfile", "a")
   gems.each {|gem| gemfile.puts(gem)}
   gemfile.close
