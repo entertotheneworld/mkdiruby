@@ -63,7 +63,7 @@ end
 ########### README
 def readme(folder_name)
   readme = File.open("./#{folder_name}/README.md", "w")
-  readme.puts("# NAME\n\n\n## 1. Download the source code\n```ruby\n$ git clone https://github.com/entertotheneworld/XXXXX\n$ cd XXXXX\n```\n\n\n## 2. Install Gem\n```ruby\n$ gem install bundler\n$ bundle install\n$ rspec --init\n```\nTo verify the installation you must have a Gemfile.lock file in the folder.\n⚠️ COMMON ERROR : Check that your version of ruby ​​matches the one saved in the gem file.\n\n\n## 3. Usage\n```ruby\n$ cd lib\n$ ruby app.rb\n```")
+  readme.puts("# NAME\n\n\n## 1. Download the source code\n```ruby\n$ git clone https://github.com/entertotheneworld/XXXXX\n$ cd XXXXX\n```\n\n\n## 2. Install Gem\n```ruby\n$ gem install bundler\n$ bundle install\n$ rspec --init\n```\nTo verify the installation you must have a Gemfile.lock file in the folder.\n⚠️ COMMON ERROR : Check that your version of ruby ​​matches the one saved in the gem file.\n\n\n## 3. Usage\n```ruby\n$ ruby app.rb\n```")
   readme.close
 end
 
