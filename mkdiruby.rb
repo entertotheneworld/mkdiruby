@@ -43,6 +43,14 @@ end
 ########### FOLDER LIB
 def folder_lib(folder_name)
   system("cd #{folder_name} && mkdir lib")
+  system("cd #{folder_name} && cd lib && mkdir app")
+  system("cd #{folder_name} && cd lib && mkdir views")
+end
+
+
+########### FOLDER DB
+def folder_db(folder_name)
+  system("cd #{folder_name} && mkdir db")
 end
 
 
@@ -71,7 +79,7 @@ end
 ########### APP.RB
 def app(folder_name)
   app = File.open("./#{folder_name}/app.rb", "w+")
-  app.puts("require 'bundler'\nBundler.require\nrequire_relative 'lib/'")
+  app.puts("require 'bundler'\nBundler.require\n\n$:.unshift File.expand_path(\"./../lib\", __FILE__)\nrequire 'app/fichier_1'\nrequire 'views/fichier_2'")
   app.close
 end
 
@@ -107,6 +115,9 @@ def perform
 
   # App.rb
   app(folder_name)
+
+  # Db 
+  folder_db(folder_name)
 end
 
 perform
